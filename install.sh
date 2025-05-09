@@ -6,10 +6,10 @@ scrDir="$(dirname "$(realpath "$0")")"
 source "${scrDir}/global_fun.sh"
 
 # Installing yay
-.${scrDir}/yay.sh
+${scrDir}./yay.sh
 
 # Installing packages
-.${scrDir}/install_packages.sh
+${scrDir}./install_packages.sh
 
 # Installing dotfiles
 mkdir -p "${HOME}/.config"
