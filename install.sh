@@ -17,3 +17,6 @@ mkdir -p "${HOME}/Pictures"
 
 cp -r "${scrDir}/Pictures/"* "${HOME}/Pictures/"
 cp -r "${scrDir}/config/"* "${HOME}/.config/"
+
+echo "exec i3" > "${HOME}/.xinitrc"
+startx
