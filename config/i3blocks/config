@@ -1,0 +1,64 @@
+# i3blocks configuration file
+#
+# The i3blocks man page describes the usage of the binary,
+# and its website describes the configuration:
+#
+#     https://vivien.github.io/i3blocks
+
+
+# Global properties
+separator=true
+separator_block_width=15
+
+[user]
+label=  
+command=lslogins | grep $USER | awk '{print $5,$NF}'
+color=#ebb434
+interval=once
+
+[uptime]
+command=uptime -p
+interval=60
+
+[cpu]
+command=~/.config/i3blocks/cpu.sh
+interval=10
+
+[memory]
+command=free -h | awk '/^Mem/ { print $3 " " $2 }'
+interval=10
+
+[update]
+command=~/.config/i3blocks/update.sh
+interval=3600
+
+[wifi]
+command=~/.config/i3blocks/wifi_status.sh
+interval=5
+
+[volume]
+command=~/.config/i3blocks/volume.sh
+interval=2
+click-left="pavucontrol"
+signal=10
+
+[netspeed]
+command=~/.config/i3blocks/netspeed.sh
+interval=1
+
+[weather]
+command=curl -Ss 'https://wttr.in/Rabarka?0&T&Q' | cut -c 16- | head -2 | xargs echo
+interval=3600
+color=#A4C2F4
+
+[printer_status]
+command=~/.config/i3blocks/printer.sh
+interval=5
+
+[battery]
+command=battery.sh
+interval=10
+
+[time]
+command=date '+%a %b %d, %H:%M:%S'
+interval=1

@@ -1,0 +1,40 @@
+pacman-contrib
+wget
+bash-completion
+i3-wm
+i3blocks
+dmenu
+alacritty
+rxvt-unicode
+picom
+feh
+dunst
+libnotify
+xorg-server
+xorg-xinit
+xorg-xrandr
+xorg-xsetroot
+pipewire                                               # audio/video server
+pipewire-alsa                                          # pipewire alsa client
+pipewire-audio                                         # pipewire audio client
+pipewire-jack                                          # pipewire jack client
+pipewire-pulse                                         # pipewire pulseaudio client
+gst-plugin-pipewire                                    # pipewire gstreamer client
+wireplumber                                            # pipewire session manager
+pavucontrol                                            # pulseaudio volume control
+pamixer                                                # pulseaudio cli mixer
+networkmanager                                         # network manager
+iw							# wireless utility
+nemo							# file manager
+nemo-audio-tab
+nemo-fileroller
+nemo-image-converter
+nemo-share
+firefox							# firefox browser
+code							# vs code
+bc							# arbitrary precision calculator language
+nwg-look						# gtk theme chooser
+sassc
+udisks2
+ttf-mononoki-nerd                       # fonts
+ttf-ubuntu-font-family                  # fonts
