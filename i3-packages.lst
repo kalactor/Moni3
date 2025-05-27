@@ -39,3 +39,4 @@ udisks2
 ttf-mononoki-nerd                                      # fonts
 ttf-ubuntu-font-family                                 # fonts
 otf-font-awesome                                       # fonts
+autocutsel                                             # clipboard fixer

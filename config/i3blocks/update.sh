@@ -1,17 +1,27 @@
-#!/bin/bash
+#!/usr/bin/env bash
 
-total_updates=$(checkupdates | wc -l)
+set -euo pipefail
 
-updater(){
-if (( total_updates > 0 )); then
-	echo "🗘 ${total_updates}"
+# ── fetch updates once, quietly ────────────────────────────────────────────────
+mapfile -t updates < <(checkupdates 2>/dev/null)
+n=${#updates[@]}
+
+# ── handle mouse clicks ─────────────────────────────────────────────────────────
+if [[ -n "${BLOCK_BUTTON:-}" ]]; then
+    case "$BLOCK_BUTTON" in
+        1)
+            alacritty -e bash -c "sudo pacman -Syu; echo; read -p 'Press ENTER to close...'" 
+            ;;
+        3)
+            notify-send "Available updates ($n)" "$(printf '%s\n' "${updates[@]}")"
+            ;;
+    esac
+    exit 0
 fi
-}
 
-updater
-
-if [[ $BLOCK_BUTTON == 1 ]]; then
-	alacritty -e bash -c "sudo pacman -Syu --noconfirm; echo; read -p 'Press ENTER to close...'"
-	updater
-	exit
+# ── output for i3blocks ────────────────────────────────────────────────────────
+if (( n > 0 )); then
+    echo "  $n"
+    echo ""
+    echo "#00FF00"
 fi

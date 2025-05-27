@@ -8,7 +8,7 @@
 
 # Global properties
 separator=true
-separator_block_width=15
+separator_block_width=14
 
 [user]
 label=  
@@ -25,7 +25,7 @@ command=~/.config/i3blocks/cpu.sh
 interval=10
 
 [memory]
-command=free -h | awk '/^Mem/ { print $3 " " $2 }'
+command=~/.config/i3blocks/memory.sh
 interval=10
 
 [update]
@@ -47,9 +47,8 @@ command=~/.config/i3blocks/netspeed.sh
 interval=1
 
 [weather]
-command=curl -Ss 'https://wttr.in/Rabarka?0&T&Q' | cut -c 16- | head -2 | xargs echo
+command=~/.config/i3blocks/weather.sh
 interval=3600
-color=#A4C2F4
 
 [printer_status]
 command=~/.config/i3blocks/printer.sh

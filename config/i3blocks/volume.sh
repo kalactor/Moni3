@@ -12,7 +12,6 @@ esac
 volume=$(pamixer --get-volume)
 muted=$(pamixer --get-mute)
 
-# Nerd Font icons
 if [ "$muted" = "true" ]; then
 	echo -e "  ${volume}%"
 	echo ""
@@ -20,13 +19,11 @@ if [ "$muted" = "true" ]; then
 elif [ "$volume" -ge 70 ]; then
 	echo -e "   ${volume}%"
 	echo ""
-	echo "#00FF00"
+	echo "#FFFF00"
 elif [ "$volume" -ge 30 ]; then
 	echo -e "  ${volume}%"
 	echo ""
-	echo "#00FF00"
 else
 	echo -e " ${volume}%"
 	echo ""
-	echo "#FF0000"
 fi

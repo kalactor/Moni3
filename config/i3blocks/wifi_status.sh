@@ -10,7 +10,7 @@ interface=$(iw dev | awk '$1=="Interface"{print $2}' | head -n1)
 
 # If no wifi interface
 if [ -z "$interface" ]; then
-    echo "🚫  No WiFi"    # full_text
+    echo "🚫  No WiFi Adapter"    # full_text
     echo "🚫"               # short_text (blank)
     echo "#FF0000"       # colour (red)
     exit 0
@@ -28,5 +28,4 @@ if [ -z "$ssid" ]; then
 else
     echo "📶  $ssid (${signal}dBm)"
     echo "📶"              # you could also do something like "($signal dBm)" here
-    echo "#AAFF00"       # green
 fi
