@@ -31,7 +31,7 @@ nemo-fileroller
 nemo-image-converter
 nemo-share
 firefox							                       # firefox browser
-code							                       # vs code
+visual-studio-code-bin							       # vs code
 bc							                           # arbitrary precision calculator language
 nwg-look						                       # gtk theme chooser
 sassc
