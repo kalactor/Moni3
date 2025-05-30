@@ -117,6 +117,16 @@ bindsym $mod+d exec --no-startup-id dmenu_run
 # .desktop file. It is a wrapper around dmenu, so you need that installed.
 # bindcode $mod+40 exec --no-startup-id i3-dmenu-desktop
 
+# Screenshots
+bindsym Print exec --no-startup-id maim "$HOME/Pictures/$(date).png" && notify-send "Screenshot saved to Pictures directory"
+bindsym $mod+Print exec --no-startup-id maim --window $(xdotool getactivewindow) "$HOME/Pictures/$(date).png" && notify-send "Screenshot saved to Pictures directory"
+bindsym Shift+Print exec --no-startup-id maim --select "$HOME/Pictures/$(date).png" && notify-send "Screenshot saved to Pictures directory"
+
+# Screenshots to clipboard
+bindsym Ctrl+Print exec --no-startup-id maim | xclip -selection clipboard -t image/png && notify-send "Screenshot copied"
+bindsym Ctrl+$mod+Print exec --no-startup-id maim --window $(xdotool getactivewindow) | xclip -selection clipboard -t image/png && notify-send "Screenshot copied"
+bindsym Ctrl+Shift+Print exec --no-startup-id maim --select | xclip -selection clipboard -t image/png && notify-send "Screenshot copied"
+
 # change focus
 bindsym $mod+j focus left
 bindsym $mod+k focus down

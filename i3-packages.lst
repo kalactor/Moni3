@@ -40,3 +40,8 @@ ttf-mononoki-nerd                                      # fonts
 ttf-ubuntu-font-family                                 # fonts
 otf-font-awesome                                       # fonts
 autocutsel                                             # clipboard fixer
+
+# Screenshot tools
+maim                                                   # take screenshot
+xclip                                                  # copy to clipboard
+xdotool                                                # get active window
