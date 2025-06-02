@@ -106,6 +106,9 @@ bindsym $mod+f exec nemo
 # start lock screen
 bindsym $mod+o exec $HOME/.config/scripts/lock
 
+# shutdown key
+bindsym $mod+Shift+a exec $HOME/shutdown.sh
+
 # kill focused window
 bindsym $mod+q kill
 
@@ -274,3 +277,5 @@ for_window [window_role="About"] floating enable
 for_window [class="Nm-connection-editor"] floating enable
 for_window [class="pavucontrol"] floating enable
 for_window [class="Nwg-look"] floating enable
+for_window [class="firefox" window_role="Organizer"] floating enable, resize set 850 600, move position center
+for_window [class="^example"] floating enable
